@@ -1,31 +1,49 @@
+import Home from "./Components/Home";
+import About from "./Components/About";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import Login from "./Components/Login";
+import SignInPage from "./Components/signin";
+import Business from "./Components/Business";
+import Payment from "./Components/Payment";
+import Booking from "./Components/Booking";
 
-import './App.css';
+const routes = createBrowserRouter([
+  {
+    path: "/",
+    element: <Home />,
+  },
+  {
+    path: "/about",
+    element: <About />,
+  },
+  {
+    path: "/contact",
+    element: <About />,
+  },
+  {
+    path: "/login",
+    element: <Login/>,
+  },
+  {
+    path: "/signin",
+    element: <SignInPage/>,
+  },
+  {
+    path: "/Business",
+    element: <Business/>,
+  },
+  {
+    path: "/Payment",
+    element: <Payment/>,
+  },
+  {
+    path: "/Booking",
+    element: <Booking/>,
+  },
+]);
 
 function App() {
-  return <nav class="navbar navbar-expand-lg bg-body-tertiary">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">Navbar</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Features</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Pricing</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>;
+  return <RouterProvider router={routes} />;
 }
 
 export default App;
